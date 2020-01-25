@@ -1,26 +1,26 @@
 @startuml
+Gender o-- Person
+Person *-- Employee
 
-abstract class AbstractList
-abstract AbstractCollection
-interface List
-interface Collection
-
-List <|-- AbstractList
-Collection <|-- AbstractCollection
-
-Collection <|- List
-AbstractCollection <|- AbstractList
-AbstractList <|-- ArrayList
-
-class ArrayList {
-Object[] elementData
-size()
+class Person {
+Long id
+String firstName
+String lastName
+String middleName
+Date birthDate
+Gender gender
+String passportNumber
 }
 
-enum TimeUnit {
-DAYS
-HOURS
-MINUTES
+class Employee{
+Person person
+Date employeeDate
+Date dismissalDate
+}
+
+enum Gender {
+MALE
+FEMALE
 }
 
 @enduml
